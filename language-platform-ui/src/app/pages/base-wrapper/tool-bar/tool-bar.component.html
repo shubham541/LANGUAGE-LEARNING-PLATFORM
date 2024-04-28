@@ -1,0 +1,12 @@
+<mat-toolbar class="toolbar" color="white">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+
+        <div class="back-button" *ngIf="showBackButton">
+            <button mat-button (click)="goBack()">
+                <mat-icon class="back-icon" color="primary">keyboard_arrow_left</mat-icon>
+            </button>
+        </div>
+
+        <div class="toolbar-text" [innerText]="toolbarText"></div>
+    </div>
+</mat-toolbar>

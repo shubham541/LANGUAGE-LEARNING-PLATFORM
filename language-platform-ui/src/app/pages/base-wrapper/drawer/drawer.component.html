@@ -1,0 +1,72 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="side" opened class="main-drawer" [fixedInViewport]="true" [fixedTopGap]="0"
+        [fixedBottomGap]="0">
+        <div fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
+            <div fxLayout="column" class="drawer-content" fxLayoutAlign="center center" fxLayoutGap="20px">
+
+                <button [routerLink]="['home']" mat-button>
+                    <img src="../../../assets/bird-logo-blue.png" alt="logo" height="64" width="64">
+                </button>
+
+                <a class="sidebar-link" mat-button [routerLink]="['home']" routerLinkActive="active">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                        <mat-icon>home</mat-icon>
+                        <div>Home</div>
+                    </div>
+                </a>
+
+                <a class="sidebar-link" mat-button [routerLink]="['profile', username]" routerLinkActive="active">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                        <mat-icon>perm_identity</mat-icon>
+                        <div>Profile</div>
+                    </div>
+                </a>
+
+                <a class="sidebar-link" mat-button [routerLink]="['users']" routerLinkActive="active">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                        <mat-icon>group</mat-icon>
+                        <div>Users</div>
+                    </div>
+                </a>
+
+                <button (click)="showTweetDialog()" class="sidebar-link rounded" mat-flat-button color="primary">
+                    Tweet
+                </button>
+
+
+            </div>
+
+            <button (click)="openUserMenu()" class="sidebar-link" style="margin-top: 50px;" mat-button>
+                <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px" fxFlexFill>
+                    <app-user-avatar [size]="44" [username]="username"></app-user-avatar>
+                    <div class="grey username">@{{username}}</div>
+                    <mat-icon [matMenuTriggerFor]="menu" class="grey">more_vert</mat-icon>
+                </div>
+            </button>
+
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="0px" fxFlexFill>
+            <app-tool-bar style="width: 100%;"></app-tool-bar>
+            <div fxLayout="row" fxLayoutAlign="start start" fxFlexFill>
+                <div class="drawer-inner-content">
+                    <ng-content #drawerContent></ng-content>
+                </div>
+                <app-search-bar *ngIf="!hasRoute('reset')" class="drawer-content"></app-search-bar>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu" yPosition="above" xPosition="before">
+    <button (click)="resetPassword()" mat-menu-item>
+        <mat-icon>security</mat-icon>
+        <span>Forgot Password</span>
+    </button>
+    <button (click)="logout()" mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout @{{username}}</span>
+    </button>
+</mat-menu>

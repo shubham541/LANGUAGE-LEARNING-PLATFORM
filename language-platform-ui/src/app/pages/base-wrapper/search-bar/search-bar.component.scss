@@ -1,0 +1,51 @@
+.search-bar {
+    max-width: 500px;
+}
+
+.search-content {
+    position: relative;
+}
+
+$iconSize: 20px;
+
+.search-icon {
+    font-size: $iconSize;
+    height: $iconSize;
+    width: $iconSize;
+    padding-right: 5px;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+}
+
+::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+}
+
+.mat-option {
+    font-size: small;
+    height: 80px;
+    line-height: normal;
+    .name {
+        color: black;
+    }
+}
+
+// ::ng-deep .name {
+//     font-size: large;
+// }
+::ng-deep .mat-autocomplete-panel {
+    margin-top: 10px;
+    max-height: 450px !important;
+    padding-top: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
