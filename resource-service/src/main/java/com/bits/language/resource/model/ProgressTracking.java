@@ -1,23 +1,18 @@
 package com.bits.language.resource.model;
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 
-@Entity
+@Document
 public class ProgressTracking {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDateTime date;
     private int score;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "language_id")
     private Language language;
 
     // Getters and setters

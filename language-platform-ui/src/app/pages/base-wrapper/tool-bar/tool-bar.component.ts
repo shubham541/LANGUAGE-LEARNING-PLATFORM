@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import {AppConstants} from "../../../shared/constants";
 
 @Component({
   selector: 'app-tool-bar',
@@ -28,7 +29,15 @@ export class ToolBarComponent implements OnInit {
   }
 
   get toolbarText(): string {
-    const text = this.path ?? 'Home';
+    const text = {
+      'home': 'Learn a new language today!',
+      ...{
+        ...AppConstants.languages.reduce((acc: any, curr) => {
+          acc[curr.code] = curr.name;
+          return acc;
+        }, {}),
+      }
+    }[this.path] ?? this.path;
     return `${text[0].toUpperCase()}${text.slice(1).toLowerCase()}`;
   }
 

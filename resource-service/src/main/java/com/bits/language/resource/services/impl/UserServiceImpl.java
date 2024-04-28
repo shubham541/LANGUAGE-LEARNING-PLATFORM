@@ -1,43 +1,71 @@
 package com.bits.language.resource.services.impl;
 
-import com.bits.language.resource.dto.LoginDTO;
-import com.bits.language.resource.dto.UserDTO;
+import com.bits.language.commons.logger.LogExecutionTime;
+import com.bits.language.commons.model.AuthUserDto;
+import com.bits.language.commons.model.RegisterRequest;
+import com.bits.language.commons.utility.AppUtility;
 import com.bits.language.resource.model.User;
-import com.bits.language.resource.repository.UserRepository;
+import com.bits.language.resource.repository.UserRepo;
 import com.bits.language.resource.services.UserService;
+import com.bits.language.resource.services.helper.AppServiceHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+
+import javax.validation.Valid;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private UserRepo authUserRepo;
 
-    @Override
-    public void registerUser(UserDTO userDTO) {
-        // Convert DTO to entity and save in database
-        User user = new User();
-        user.setUsername(userDTO.getUsername());
-        user.setEmail(userDTO.getEmail());
-        user.setPassword(userDTO.getPassword());
-    //    userRepository.save(user);
-    }
+	@Autowired
+	private AppUtility appUtility;
 
-    @Override
-    public boolean authenticateUser(LoginDTO loginDTO) {
-		return false;
-        // Check if user with given username and password exists in the database
-       // User user = userRepository.findByUsernameAndPassword(loginDTO.getUsername(), loginDTO.getPassword());
-      //  return user != null;
-    }
+	@Autowired
+	private AppServiceHelper serviceHelper;
 
-    @Override
-    public void updateUser(UserDTO userDTO) {
-        // Fetch user from database, update fields, and save
-//        User user = userRepository.findByUsername(userDTO.getUsername());
-//        user.setEmail(userDTO.getEmail());
-//        user.setPassword(userDTO.getPassword());
-//        userRepository.save(user);
-    }
+	@Autowired
+	private MongoTemplate mongoTemplate;
+
+	@LogExecutionTime
+	@Override
+	public AuthUserDto findByUsernameOrEmail(String username, String email) {
+		final var authUser = authUserRepo.findByUsernameOrEmail(username, email);
+		return serviceHelper.buildAuthUserDto(authUser);
+	}
+
+	@LogExecutionTime
+	@Override
+	public String registerUser(RegisterRequest request) {
+		final String id = appUtility.generateStringId();
+		authUserRepo.save(serviceHelper.buildAuthUser(id, request));
+		final User user = mongoTemplate.save(serviceHelper.buildUserEntity(id, request));
+		return user.getUsername();
+	}
+
+	@LogExecutionTime
+	@Override
+	public AuthUserDto findByUsername(String username) {
+		final var authUser = authUserRepo.findByUsername(username);
+		return serviceHelper.buildAuthUserDto(authUser);
+	}
+
+	@LogExecutionTime
+	@Override
+	public AuthUserDto updateAuthUser(@Valid AuthUserDto authUserDto) {
+		final var authUser = authUserRepo.findByUsername(authUserDto.getUsername());
+		serviceHelper.updateAuthUser(authUser, authUserDto);
+		final var updated = authUserRepo.save(authUser);
+		return serviceHelper.buildAuthUserDto(updated);
+	}
+
+	@LogExecutionTime
+	@Override
+	public AuthUserDto findByEmail(String email) {
+		final var authUser = authUserRepo.findByEmail(email);
+		return serviceHelper.buildAuthUserDto(authUser);
+	}
+
 }

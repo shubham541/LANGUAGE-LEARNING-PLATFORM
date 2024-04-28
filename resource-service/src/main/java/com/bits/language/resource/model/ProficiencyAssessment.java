@@ -1,19 +1,16 @@
 package com.bits.language.resource.model;
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+
+@Document
 public class ProficiencyAssessment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
     private String description;
     private String difficultyLevel;
 
-    @ManyToOne
-    @JoinColumn(name = "language_id")
     private Language language;
 
     // Getters and setters

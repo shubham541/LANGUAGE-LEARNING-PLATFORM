@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/languages")
 public class LanguageController {
@@ -13,10 +15,9 @@ public class LanguageController {
     @Autowired
     private LanguageService languageService;
 
-    @GetMapping("/supported")
-    public String getSupportedLanguages() {
-		return null;
-        // Call LanguageService to retrieve supported languages
+    @GetMapping
+    public List<LanguageDTO> getSupportedLanguages() {
+		return languageService.getSupportedLanguages();
     }
 
     @PostMapping("/add")

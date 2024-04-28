@@ -6,7 +6,9 @@ import { ResetPasswordComponent } from './pages/auth/reset-password/reset-passwo
 import { SignUpPageComponent } from './pages/auth/sign-up-page/sign-up-page.component';
 import { BaseWrapperComponent } from './pages/base-wrapper/base-wrapper.component';
 import { AuthGuardService } from './shared/auth-guard.service';
-import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { UserProfileComponent } from './pages/home/user-profile/user-profile.component';
+import {HomePageComponent} from "./pages/home/home-page/home-page.component";
+import {LanguageComponent} from "./pages/home/language/language.component";
 
 export const routes: Routes = [
   {
@@ -32,12 +34,19 @@ export const routes: Routes = [
         {
           path: 'profile/:username',
           component: UserProfileComponent,
-          canActivate: [AuthGuardService],
+          pathMatch: 'full'
+        },
+        {
+          path: 'home',
+          component: HomePageComponent
+        },
+        {
+          path: 'languages/:code',
+          component: LanguageComponent,
           pathMatch: 'full'
         },
         {
           path: 'reset', component: ResetPasswordComponent,
-          canActivate: [AuthGuardService]
         },
       ]
     },

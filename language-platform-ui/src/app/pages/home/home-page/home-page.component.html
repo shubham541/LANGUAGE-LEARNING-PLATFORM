@@ -1,0 +1,21 @@
+<div class="home-page">
+  <ng-container *ngFor="let language of languages | async">
+    <div class="language m-7">
+      <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ language.name }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="language-content">
+          <div class="language-content__description">
+            {{ language.desc }}
+          </div>
+          <div class="language-content__links">
+            <a mat-button [routerLink]="['/languages', language.code]">Learn more</a>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </ng-container>
+</div>

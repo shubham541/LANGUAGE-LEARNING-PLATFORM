@@ -1,12 +1,11 @@
 package com.bits.language.resource.model;
 
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+
+@Document
 public class LearningMaterial {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -14,8 +13,6 @@ public class LearningMaterial {
     private String type;
     private String content;
 
-    @ManyToOne
-    @JoinColumn(name = "language_id")
     private Language language;
 
     // Getters and setters

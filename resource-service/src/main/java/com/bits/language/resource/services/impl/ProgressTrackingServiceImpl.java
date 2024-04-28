@@ -1,20 +1,25 @@
 package com.bits.language.resource.services.impl;
 
+import com.bits.language.resource.dto.ProgressDTO;
 import com.bits.language.resource.services.ProficiencyAssessmentService;
 import com.bits.language.resource.dto.AssessmentResultDTO;
+import com.bits.language.resource.services.ProgressTrackingService;
+import org.springframework.stereotype.Service;
 
-public class ProgressTrackingServiceImpl implements ProficiencyAssessmentService {
+import java.util.List;
+
+@Service
+
+public class ProgressTrackingServiceImpl implements ProgressTrackingService {
+
 
 	@Override
-	public void generateProficiencyAssessment(Long languageId) {
-		// TODO Auto-generated method stub
-		
+	public List<ProgressDTO> getProgressTracking(Long userId, Long languageId) {
+		return null;
 	}
 
 	@Override
-	public void evaluateProficiencyAssessment(AssessmentResultDTO resultDTO) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void recordProgress(ProgressDTO progressDTO) {
 
+	}
 }

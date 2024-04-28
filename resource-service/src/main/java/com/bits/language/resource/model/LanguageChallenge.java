@@ -1,12 +1,10 @@
 package com.bits.language.resource.model;
 
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+@Document
 public class LanguageChallenge {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -16,8 +14,6 @@ public class LanguageChallenge {
     private String rules;
     private String rewards;
 
-    @ManyToOne
-    @JoinColumn(name = "language_id")
     private Language language;
 
     // Getters and setters

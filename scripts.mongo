@@ -1,0 +1,376 @@
+db.languages.insertMany([
+{
+name: 'English',
+code: 'en',
+desc: 'English is a West Germanic language first spoken in early medieval England, which has become the leading language of international discourse in the 21st century.'
+},
+{
+name: 'Spanish',
+code: 'es',
+desc: 'Spanish is a Romance language that originated in the Iberian Peninsula of Europe. Today, it is a global language with more than 483 million native speakers, mainly in Spain and the Americas.'
+},
+{
+name: 'French',
+code: 'fr',
+desc: 'French is a Romance language of the Indo-European family. It descended from the Vulgar Latin of the Roman Empire, as did all Romance languages.'
+},
+{
+name: 'German',
+code: 'de',
+desc: 'German is a West Germanic language mainly spoken in Central Europe. It is the most widely spoken and official or co-official language in Germany, Austria, Switzerland, Liechtenstein, and the Italian province of South Tyrol.'
+},
+{
+name: 'Italian',
+code: 'it',
+desc: 'Italian is a Romance language of the Indo-European language family. Italian is, by most measures and together with Sardinian, the closest language to Latin, from which it descends via Vulgar Latin.'
+},
+{
+name: 'Portuguese',
+code: 'pt',
+desc: 'Portuguese is a Romance language originating in the Iberian Peninsula of Europe. It is the sole official language of Portugal, Brazil, Cape Verde, Guinea-Bissau, Mozambique, Angola, and São Tomé and Príncipe.'
+},
+{
+name: 'Russian',
+code: 'ru',
+desc: 'Russian is an East Slavic language native to the Russians in Eastern Europe. It is an official language in Russia, Belarus, Kazakhstan, Kyrgyzstan, and is used widely throughout the Caucasus, Central Asia, and to some extent in the Baltic states.'
+},
+{
+name: 'Chinese',
+code: 'zh',
+desc: 'Chinese is a group of languages that form the Sinitic branch of the Sino-Tibetan languages'
+}
+]);
+
+
+db.language_vocabulary.insertMany([
+{
+"code": "en",
+"Nouns": {
+"Person": ["man", "woman", "child", "friend", "teacher", "doctor"],
+"Place": ["house", "school", "park", "city", "country", "restaurant"],
+"Thing": ["book", "table", "computer", "car", "phone", "bag"]
+},
+"Verbs": {
+"Action": ["run", "jump", "eat", "sleep", "write", "read"],
+"State": ["be", "have", "know", "like", "want", "think"]
+},
+"Adjectives": {
+"Descriptive": ["big", "small", "tall", "short", "fast", "slow"],
+"Qualitative": ["happy", "sad", "beautiful", "ugly", "intelligent", "kind"]
+},
+"Adverbs": {
+"Manner": ["quickly", "slowly", "loudly", "quietly", "carefully"],
+"Degree": ["very", "extremely", "quite", "somewhat", "too"]
+},
+"Prepositions": ["in", "on", "at", "under", "over", "between", "beside"],
+"Conjunctions": ["and", "but", "or", "so", "because", "although", "while"],
+"Determiners": {
+"Articles": ["a", "an", "the"],
+"Possessive": ["my", "your", "his", "her", "its"]
+},
+"Pronouns": {
+"Personal": ["I", "you", "he", "she", "it", "we", "they"],
+"Demonstrative": ["this", "that", "these", "those"]
+},
+"Interjections": ["wow", "oh", "yes", "no", "ouch", "hey"],
+"Numbers": {
+"Cardinal": ["one", "two", "three", "four", "five"],
+"Ordinal": ["first", "second", "third", "fourth", "fifth"]
+}
+},
+{
+"code": "es",
+"Nouns": {
+"Person": ["hombre", "mujer", "niño", "amigo", "maestro", "doctor"],
+"Place": ["casa", "escuela", "parque", "ciudad", "país", "restaurante"],
+"Thing": ["libro", "mesa", "computadora", "coche", "teléfono", "bolso"]
+},
+"Verbs": {
+"Action": ["correr", "saltar", "comer", "dormir", "escribir", "leer"],
+"State": ["ser", "tener", "saber", "gustar", "querer", "pensar"]
+},
+"Adjectives": {
+"Descriptive": ["grande", "pequeño", "alto", "bajo", "rápido", "lento"],
+"Qualitative": ["feliz", "triste", "hermoso", "feo", "inteligente", "amable"]
+},
+"Adverbs": {
+"Manner": ["rápidamente", "lentamente", "ruidosamente", "silenciosamente", "cuidadosamente"],
+"Degree": ["muy", "extremadamente", "bastante", "algo", "demasiado"]
+},
+"Prepositions": ["en", "sobre", "a", "bajo", "entre", "junto a", "cerca de"],
+"Conjunctions": ["y", "pero", "o", "así que", "porque", "aunque", "mientras"],
+"Determiners": {
+"Articles": ["un", "una", "el", "la"],
+"Possessive": ["mi", "tu", "su", "nuestro", "vuestro", "su"]
+},
+"Pronouns": {
+"Personal": ["yo", "tú", "él", "ella", "nosotros", "vosotros", "ellos"],
+"Demonstrative": ["este", "ese", "aquel", "estos", "esos", "aquellos"]
+},
+"Interjections": ["¡wow!", "¡oh!", "¡sí!", "¡no!", "¡ay!", "¡eh!"],
+"Numbers": {
+"Cardinal": ["uno", "dos", "tres", "cuatro", "cinco"],
+"Ordinal": ["primero", "segundo", "tercero", "cuarto", "quinto"]
+}
+},
+{
+"code": "fr",
+"Nouns": {
+"Person": ["homme", "femme", "enfant", "ami", "professeur", "médecin"],
+"Place": ["maison", "école", "parc", "ville", "pays", "restaurant"],
+"Thing": ["livre", "table", "ordinateur", "voiture", "téléphone", "sac"]
+},
+"Verbs": {
+"Action": ["courir", "sauter", "manger", "dormir", "écrire", "lire"],
+"State": ["être", "avoir", "savoir", "aimer", "vouloir", "penser"]
+},
+"Adjectives": {
+"Descriptive": ["grand", "petit", "grand", "court", "rapide", " lent"],
+"Qualitative": ["heureux", "triste", "beau", "laid", "intelligent", "gentil"]
+},
+"Adverbs": {
+"Manner": ["rapidement", " lentement", "bruyamment", "silencieusement", "soigneusement"],
+"Degree": ["très", "extrêmement", "assez", "un peu", "trop"]
+},
+"Prepositions": ["dans", "sur", "à", "sous", "entre", "à côté de"],
+"Conjunctions": ["et", "mais", "ou", "donc", "parce que", "bien que", "pendant que"],
+"Determiners": {
+"Articles": ["un", "une", "le", "la"],
+"Possessive": ["mon", "ton", "son", "notre", "votre", "leur"]
+},
+"Pronouns": {
+"Personal": ["je", "tu", "il", "elle", "nous", "vous", "ils", "elles"],
+"Demonstrative": ["ceci", "cela", "celui", "celle", "ceux", "celles"]
+},
+"Interjections": ["wow", "oh", "oui", "non", "aïe", "eh bien"],
+"Numbers": {
+"Cardinal": ["un", "deux", "trois", "quatre", "cinq"],
+"Ordinal": ["premier", "deuxième", "troisième", "quatrième", "cinquième"]
+}
+},
+{
+"code": "de",
+"Nouns": {
+"Person": ["Mann", "Frau", "Kind", "Freund", "Lehrer", "Arzt"],
+"Place": ["Haus", "Schule", "Park", "Stadt", "Land", "Restaurant"],
+"Thing": ["Buch", "Tisch", "Computer", "Auto", "Telefon", "Tasche"]
+},
+"Verbs": {
+"Action": ["rennen", "springen", "essen", "schlafen", "schreiben", "lesen"],
+"State": ["sein", "haben", "wissen", "mögen", "wollen", "denken"]
+},
+"Adjectives": {
+"Descriptive": ["groß", "klein", "hoch", "kurz", "schnell", "langsam"],
+"Qualitative": ["glücklich", "traurig", "schön", "hässlich", "intelligent", "nett"]
+},
+"Adverbs": {
+"Manner": ["schnell", "langsam", "laut", "leise", "vorsichtig"],
+"Degree": ["sehr", "extrem", "ziemlich", "ein wenig", "zu"]
+},
+"Prepositions": ["in", "auf", "an", "unter", "über", "zwischen", "neben"],
+"Conjunctions": ["und", "aber", "oder", "also", "weil", "obwohl", "während"],
+"Determiners": {
+"Articles": ["ein", "eine", "der", "die"],
+"Possessive": ["mein", "dein", "sein", "ihr", "unser", "euer"]
+},
+"Pronouns": {
+"Personal": ["ich", "du", "er", "sie", "es", "wir", "ihr", "sie"],
+"Demonstrative": ["dies", "das", "jener", "jene", "diese", "diese"]
+},
+"Interjections": ["wow", "ach", "ja", "nein", "aua", "hey"],
+"Numbers": {
+"Cardinal": ["eins", "zwei", "drei", "vier", "fünf"],
+"Ordinal": ["erster", "zweiter", "dritter", "vierter", "fünfter"]
+}
+},
+{
+"code": "zh",
+"Nouns": {
+"Person": ["人", "男人", "女人", "孩子", "朋友", "老师", "医生"],
+"Place": ["家", "学校", "公园", "城市", "国家", "餐厅"],
+"Thing": ["书", "桌子", "电脑", "汽车", "电话", "包"]
+},
+"Verbs": {
+"Action": ["跑", "跳", "吃", "睡觉", "写", "读"],
+"State": ["是", "有", "知道", "喜欢", "想", "认为"]
+},
+"Adjectives": {
+"Descriptive": ["大", "小", "高", "矮", "快", "慢"],
+"Qualitative": ["开心", "伤心", "漂亮", "丑陋", "聪明", "善良"]
+},
+"Adverbs": {
+"Manner": ["快速地", "慢慢地", "大声地", "轻声地", "小心地"],
+"Degree": ["非常", "极其", "相当", "有点", "太"]
+},
+"Prepositions": ["在", "上", "下", "前", "后", "里", "外"],
+"Conjunctions": ["和", "但是", "或者", "所以", "因为", "尽管", "虽然", "而"],
+"Determiners": {
+"Articles": ["一个", "一", "这", "那"],
+"Possessive": ["我的", "你的", "他的", "她的", "它的", "我们的", "你们的", "他们的"]
+},
+"Pronouns": {
+"Personal": ["我", "你", "他", "她", "它", "我们", "你们", "他们"],
+"Demonstrative": ["这个", "那个", "这些", "那些"]
+},
+"Interjections": ["哇", "哦", "是", "不", "哎呀", "嘿"],
+"Numbers": {
+"Cardinal": ["一", "二", "三", "四", "五"],
+"Ordinal": ["第一", "第二", "第三", "第四", "第五"]
+}
+}
+]);
+
+
+db.language_grammar_expalinations.insertMany([
+{
+"code": "en",
+"Parts_of_speech": {
+"Nouns": "Nouns are words that represent people, places, things, or ideas.",
+"Verbs": "Verbs are words that express actions, states, or conditions.",
+"Adjectives": "Adjectives are words that describe or modify nouns or pronouns.",
+"Adverbs": "Adverbs are words that modify verbs, adjectives, or other adverbs, typically expressing manner, place, time, degree, or frequency.",
+"Prepositions": "Prepositions are words that establish relationships between nouns or pronouns and other words in a sentence, indicating location, direction, time, or possession.",
+"Conjunctions": "Conjunctions are words that connect words, phrases, or clauses.",
+"Determiners": "Determiners are words that introduce and modify nouns, indicating specificity, possession, quantity, or definiteness.",
+"Pronouns": "Pronouns are words that replace nouns or noun phrases, referring to individuals or things without specifying them explicitly.",
+"Interjections": "Interjections are words or phrases that express emotion, surprise, or other exclamatory feelings.",
+"Numbers": "Numbers are words or symbols used to express quantity, rank, or order."
+},
+"Sentence_structure": {
+"Subject": "The subject is the person, place, thing, or idea that is doing or being something in a sentence.",
+"Predicate": "The predicate is the part of a sentence that contains the verb and describes what the subject is doing or being.",
+"Object": "The object is the person, place, thing, or idea that receives the action of the verb or is affected by the action.",
+"Phrase": "A phrase is a group of words that functions as a single unit within a sentence but does not contain both a subject and a predicate.",
+"Clause": "A clause is a group of words that contains a subject and a predicate and forms a complete thought."
+},
+"Verb_tenses": {
+"Present_simple": "The present simple tense is used to describe habitual actions, general truths, or scheduled events.",
+"Present_continuous": "The present continuous tense is used to describe actions that are happening now or around the present moment.",
+"Past_simple": "The past simple tense is used to describe actions that were completed in the past.",
+"Past_continuous": "The past continuous tense is used to describe actions that were ongoing in the past.",
+"Future_simple": "The future simple tense is used to describe actions that will happen in the future.",
+"Future_continuous": "The future continuous tense is used to describe actions that will be ongoing in the future."
+}
+},
+{
+"code": "es",
+"Parts_of_speech": {
+"Nouns": "Los sustantivos son palabras que representan personas, lugares, cosas o ideas.",
+"Verbs": "Los verbos son palabras que expresan acciones, estados o condiciones.",
+"Adjectives": "Los adjetivos son palabras que describen o modifican sustantivos o pronombres.",
+"Adverbs": "Los adverbios son palabras que modifican verbos, adjetivos u otros adverbios, típicamente expresando manera, lugar, tiempo, grado o frecuencia.",
+"Prepositions": "Las preposiciones son palabras que establecen relaciones entre sustantivos o pronombres y otras palabras en una oración, indicando ubicación, dirección, tiempo o posesión.",
+"Conjunctions": "Las conjunciones son palabras que conectan palabras, frases o cláusulas.",
+"Determiners": "Los determinantes son palabras que introducen y modifican sustantivos, indicando especificidad, posesión, cantidad o definitividad.",
+"Pronouns": "Los pronombres son palabras que reemplazan sustantivos o frases nominales, refiriéndose a individuos o cosas sin especificarlos explícitamente.",
+"Interjections": "Las interjecciones son palabras o frases que expresan emoción, sorpresa u otros sentimientos exclamativos.",
+"Numbers": "Los números son palabras o símbolos utilizados para expresar cantidad, rango u orden."
+},
+"Sentence_structure": {
+"Subject": "El sujeto es la persona, lugar, cosa o idea que está haciendo o siendo algo en una oración.",
+"Predicate": "El predicado es la parte de una oración que contiene el verbo y describe lo que el sujeto está haciendo o siendo.",
+"Object": "El objeto es la persona, lugar, cosa o idea que recibe la acción del verbo o es afectado por la acción.",
+"Phrase": "Una frase es un grupo de palabras que funciona como una unidad única dentro de una oración pero no contiene tanto un sujeto como un predicado.",
+"Clause": "Una cláusula es un grupo de palabras que contiene un sujeto y un predicado y forma un pensamiento completo."
+},
+"Verb_tenses": {
+"Presente_simple": "El presente simple se usa para describir acciones habituales, verdades generales o eventos programados.",
+"Presente_continuo": "El presente continuo se usa para describir acciones que están sucediendo ahora o alrededor del momento presente.",
+"Pasado_simple": "El pasado simple se usa para describir acciones que se completaron en el pasado.",
+"Pasado_continuo": "El pasado continuo se usa para describir acciones que estaban en curso en el pasado.",
+"Futuro_simple": "El futuro simple se usa para describir acciones que sucederán en el futuro.",
+"Futuro_continuo": "El futuro continuo se usa para describir acciones que estarán en curso en el futuro."
+}
+},
+{
+"code": "fr",
+"Parts_of_speech": {
+"Nouns": "Les noms sont des mots qui représentent des personnes, des endroits, des choses ou des idées.",
+"Verbs": "Les verbes sont des mots qui expriment des actions, des états ou des conditions.",
+"Adjectives": "Les adjectifs sont des mots qui décrivent ou modifient des noms ou des pronoms.",
+"Adverbs": "Les adverbes sont des mots qui modifient les verbes, les adjectifs ou d'autres adverbes, exprimant généralement la manière, le lieu, le temps, le degré ou la fréquence.",
+"Prepositions": "Les prépositions sont des mots qui établissent des relations entre des noms ou des pronoms et d'autres mots dans une phrase, indiquant la localisation, la direction, le temps ou la possession.",
+"Conjunctions": "Les conjonctions sont des mots qui relient des mots, des phrases ou des clauses.",
+"Determiners": "Les déterminants sont des mots qui introduisent et modifient des noms, indiquant la spécificité, la possession, la quantité ou la définitude.",
+"Pronouns": "Les pronoms sont des mots qui remplacent des noms ou des groupes nominaux, se référant à des individus ou des choses sans les spécifier explicitement.",
+"Interjections": "Les interjections sont des mots ou des expressions qui expriment une émotion, une surprise ou d'autres sentiments exclamatifs.",
+"Numbers": "Les nombres sont des mots ou des symboles utilisés pour exprimer la quantité, le rang ou l'ordre."
+},
+"Sentence_structure": {
+"Subject": "Le sujet est la personne, le lieu, la chose ou l'idée qui fait ou est quelque chose dans une phrase.",
+"Predicate": "Le prédicat est la partie d'une phrase qui contient le verbe et décrit ce que le sujet fait ou est.",
+"Object": "L'objet est la personne, le lieu, la chose ou l'idée qui reçoit l'action du verbe ou qui est affecté par l'action.",
+"Phrase": "Une phrase est un groupe de mots qui fonctionne comme une unité unique dans une phrase mais ne contient ni sujet ni prédicat.",
+"Clause": "Une proposition est un groupe de mots qui contient un sujet et un prédicat et forme une pensée complète."
+},
+"Verb_tenses": {
+"Présent_simple": "Le présent simple est utilisé pour décrire des actions habituelles, des vérités générales ou des événements programmés.",
+"Présent_continu": "Le présent continu est utilisé pour décrire des actions qui se déroulent maintenant ou autour du moment présent.",
+"Passé_simple": "Le passé simple est utilisé pour décrire des actions qui ont été achevées dans le passé.",
+"Passé_continu": "Le passé continu est utilisé pour décrire des actions qui étaient en cours dans le passé.",
+"Futur_simple": "Le futur simple est utilisé pour décrire des actions qui se produiront dans le futur.",
+"Futur_continu": "Le futur continu est utilisé pour décrire des actions qui seront en cours dans le futur."
+}
+},
+{
+"code": "ge",
+"Parts_of_speech": {
+"Nouns": "Nomen sind Wörter, die Personen, Orte, Dinge oder Ideen repräsentieren.",
+"Verbs": "Verben sind Wörter, die Handlungen, Zustände oder Bedingungen ausdrücken.",
+"Adjectives": "Adjektive sind Wörter, die Nomen oder Pronomen beschreiben oder modifizieren.",
+"Adverbs": "Adverbien sind Wörter, die Verben, Adjektive oder andere Adverbien modifizieren, typischerweise Art, Ort, Zeit, Grad oder Häufigkeit ausdrückend.",
+"Prepositions": "Präpositionen sind Wörter, die Beziehungen zwischen Nomen oder Pronomen und anderen Wörtern in einem Satz herstellen und Lage, Richtung, Zeit oder Besitz anzeigen.",
+"Conjunctions": "Konjunktionen sind Wörter, die Wörter, Phrasen oder Sätze verbinden.",
+"Determiners": "Determinatoren sind Wörter, die Nomen einführen und modifizieren und Spezifität, Besitz, Menge oder Bestimmtheit anzeigen.",
+"Pronouns": "Pronomen sind Wörter, die Nomen oder Nominalphrasen ersetzen und sich auf Individuen oder Dinge beziehen, ohne sie explizit zu spezifizieren.",
+"Interjections": "Interjektionen sind Wörter oder Phrasen, die Emotionen, Überraschung oder andere ausrufende Gefühle ausdrücken.",
+"Numbers": "Zahlen sind Wörter oder Symbole, die Menge, Rang oder Reihenfolge ausdrücken."
+},
+"Sentence_structure": {
+"Subject": "Das Subjekt ist die Person, der Ort, die Sache oder die Idee, die in einem Satz etwas tut oder ist.",
+"Predicate": "Das Prädikat ist der Teil eines Satzes, der das Verb enthält und beschreibt, was das Subjekt tut oder ist.",
+"Object": "Das Objekt ist die Person, der Ort, die Sache oder die Idee, die die Handlung des Verbs empfängt oder von der Handlung betroffen ist.",
+"Phrase": "Eine Phrase ist eine Gruppe von Wörtern, die als Einheit innerhalb eines Satzes funktioniert, aber weder ein Subjekt noch ein Prädikat enthält.",
+"Clause": "Ein Satzglied ist eine Gruppe von Wörtern, die ein Subjekt und ein Prädikat enthält und einen vollständigen Gedanken bildet."
+},
+"Verb_tenses": {
+"Präsens": "Das Präsens wird verwendet, um gewohnheitsmäßige Handlungen, allgemeine Wahrheiten oder geplante Ereignisse zu beschreiben.",
+"Präsens_continuous": "Das Präsens kontinuierlich wird verwendet, um Handlungen zu beschreiben, die gerade jetzt oder um den gegenwärtigen Moment herum stattfinden.",
+"Präteritum": "Das Präteritum wird verwendet, um Handlungen zu beschreiben, die in der Vergangenheit abgeschlossen wurden.",
+"Präteritum_continuous": "Das Präteritum kontinuierlich wird verwendet, um Handlungen zu beschreiben, die in der Vergangenheit stattfanden.",
+"Futur_I": "Das Futur I wird verwendet, um Handlungen zu beschreiben, die in der Zukunft stattfinden werden.",
+"Futur_I_continuous": "Das Futur I kontinuierlich wird verwendet, um Handlungen zu beschreiben, die in der Zukunft stattfinden werden."
+}
+},
+{
+"code": "zh",
+"Parts_of_speech": {
+"Nouns": "名词是代表人、地方、事物或思想的词语。",
+"Verbs": "动词是表示动作、状态或条件的词语。",
+"Adjectives": "形容词是用来描述或修饰名词或代词的词语。",
+"Adverbs": "副词是用来修饰动词、形容词或其他副词的词语，通常表示方式、地点、时间、程度或频率。",
+"Prepositions": "介词是用来建立名词或代词与句子中其他词之间的关系，指示位置、方向、时间或所有权。",
+"Conjunctions": "连词是用来连接词语、短语或从句的词语。",
+"Determiners": "限定词是用来引入和修饰名词的词语，表示特定性、所有权、数量或明确性。",
+"Pronouns": "代词是用来替代名词或名词短语的词语，指代个体或事物而不明确指定它们。",
+"Interjections": "感叹词是用来表达情感、惊讶或其他感叹性情感的词语或短语。",
+"Numbers": "数字是用来表示数量、等级或顺序的词语或符号。"
+},
+"Sentence_structure": {
+"Subject": "主语是句子中正在做或是某事物的人、地点、事物或思想。",
+"Predicate": "谓语是句子的一部分，包含动词，描述主语正在做的事情或状态。",
+"Object": "宾语是动词的接受者或受动作影响的人、地点、事物或思想。",
+"Phrase": "短语是一组在句子中作为单个单位工作但不包含主语和谓语的词语。",
+"Clause": "从句是一组包含主语和谓语并构成完整思想的词语。"
+},
+"Verb_tenses": {
+"现在时": "现在时用于描述习惯性行为、普遍真理或计划的事件。",
+"现在进行时": "现在进行时用于描述当前正在发生或在当前时刻周围发生的行动。",
+"过去时": "过去时用于描述在过去完成的行动。",
+"过去进行时": "过去进行时用于描述在过去进行的行动。",
+"将来时": "将来时用于描述将来会发生的行动。",
+"将来进行时": "将来进行时用于描述将来将会进行的行动。"
+}
+}
+]
+);

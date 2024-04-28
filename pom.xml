@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>data-service</module>
         <module>auth-service</module>
         <module>app-commons</module>
         <module>resource-service</module>

@@ -3,18 +3,11 @@
     <mat-sidenav #sidenav mode="side" opened class="main-drawer" [fixedInViewport]="true" [fixedTopGap]="0"
         [fixedBottomGap]="0">
         <div fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
-            <div fxLayout="column" class="drawer-content" fxLayoutAlign="center center" fxLayoutGap="20px">
+            <div fxLayout="column" class="drawer-content" fxLayoutAlign="start center" fxLayoutGap="60px">
 
                 <button [routerLink]="['home']" mat-button>
-                    <img src="../../../assets/bird-logo-blue.png" alt="logo" height="64" width="64">
+                    <img src="../../../../assets/icon-512.png" alt="logo" height="64" width="64">
                 </button>
-
-                <a class="sidebar-link" mat-button [routerLink]="['home']" routerLinkActive="active">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-                        <mat-icon>home</mat-icon>
-                        <div>Home</div>
-                    </div>
-                </a>
 
                 <a class="sidebar-link" mat-button [routerLink]="['profile', username]" routerLinkActive="active">
                     <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
@@ -22,18 +15,6 @@
                         <div>Profile</div>
                     </div>
                 </a>
-
-                <a class="sidebar-link" mat-button [routerLink]="['users']" routerLinkActive="active">
-                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
-                        <mat-icon>group</mat-icon>
-                        <div>Users</div>
-                    </div>
-                </a>
-
-                <button (click)="showTweetDialog()" class="sidebar-link rounded" mat-flat-button color="primary">
-                    Tweet
-                </button>
-
 
             </div>
 
@@ -54,7 +35,6 @@
                 <div class="drawer-inner-content">
                     <ng-content #drawerContent></ng-content>
                 </div>
-                <app-search-bar *ngIf="!hasRoute('reset')" class="drawer-content"></app-search-bar>
             </div>
         </div>
     </mat-sidenav-content>
