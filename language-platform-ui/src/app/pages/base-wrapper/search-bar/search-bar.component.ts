@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { UserDto } from 'src/app/model/userDto';
-import { PopupService } from 'src/app/services/popup.service';
-import { TweetAppResourceService } from 'src/app/services/resource.service';
+import { UserDto } from '../../../model/userDto';
+import { ResourceService } from '../../../services/resource.service';
+import { PopupService } from '../../../services/popup.service';
 
 enum SearchStage {
   notStarted,
@@ -39,7 +39,7 @@ export class SearchBarComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private resourceService: TweetAppResourceService,
+    private resourceService: ResourceService,
     private popup: PopupService
   ) { }
 
@@ -63,20 +63,20 @@ export class SearchBarComponent implements OnInit {
         if (this.searchText.length >= 3) {
           if (this.stage != SearchStage.started) {
             this.stage = SearchStage.started;
-            this.resourceService.searchByUserameUsingGET(this.searchText)
-              .pipe(takeUntil(this.subject))
-              .subscribe({
-                next: (pld) => {
-                  this.searchResult = pld.data;
-                  this.stage = SearchStage.loaded;
-                },
-                error: (err) => {
-                  this.stage = SearchStage.notFound;
-                  if (err?.status != 404) {
-                    this.popup.showError(err);
-                  }
-                }
-              });
+            // this.resourceService.searchByUserameUsingGET(this.searchText)
+            //   .pipe(takeUntil(this.subject))
+            //   .subscribe({
+            //     next: (pld) => {
+            //       this.searchResult = pld.data;
+            //       this.stage = SearchStage.loaded;
+            //     },
+            //     error: (err) => {
+            //       this.stage = SearchStage.notFound;
+            //       if (err?.status != 404) {
+            //         this.popup.showError(err);
+            //       }
+            //     }
+            //   });
           }
         } else {
           this.resetSearch();

@@ -98,7 +98,6 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
         MatProgressSpinnerModule,
         MatRippleModule,
         MatAutocompleteModule,
-        MatIconModule,
         MatMenuModule,
         MatStepperModule,
         MatDatepickerModule,

@@ -27,7 +27,7 @@
 
             <ng-container *ngSwitchCase="stages.loaded">
                 <mat-option *ngFor="let user of searchResult" [routerLink]="['profile', user.username]">
-                    <app-user-info [userCard]="false" [userInfo]="user"></app-user-info>
+                    <!-- <app-user-info [userCard]="false" [userInfo]="user"></app-user-info> -->
                 </mat-option>
             </ng-container>
 

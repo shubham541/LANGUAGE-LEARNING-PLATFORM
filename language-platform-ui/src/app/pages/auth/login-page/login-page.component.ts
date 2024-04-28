@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { UsernameLoginRequest } from '../../../model/usernameLoginRequest';
 import { EmailLoginRequest } from '../../../model/emailLoginRequest';
-import { AuthService } from '../../../../services/auth.service';
 import { CustomValidators } from '../../../validators/validator';
-import { PopupService } from '../../../../services/popup.service';
 import { PayloadTokenResponse } from '../../../model/models';
+import { AuthService } from '../../../services/auth.service';
+import { PopupService } from '../../../services/popup.service';
 
 enum LoginMode {
   username,

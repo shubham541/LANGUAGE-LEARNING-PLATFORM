@@ -9,3 +9,4 @@ export * from './usernameLoginRequest';
 export * from './usernameResponse';
 export * from './payloadstring';
 export * from './tokenResponse';
+export * from './userDto';

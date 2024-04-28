@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { ConfirmationData, ConfirmDialogComponent } from 'src/app/dialog/confirm-dialog/confirm-dialog.component';
-import { TweetOperations, TweetOperationsData, TweetOperationsDialogComponent } from 'src/app/dialog/tweet-operations-dialog/tweet-operations-dialog.component';
-import { TweetAppAuthService } from 'src/app/services/auth/tweet-app-auth.service';
-import { PopupService } from 'src/app/services/popup.service';
+import { AuthService } from '../../../services/auth.service';
+import { PopupService } from '../../../services/popup.service';
+import { ConfirmDialogComponent, ConfirmationData } from '../../../shared/dialog/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-drawer',
@@ -16,7 +15,7 @@ export class DrawerComponent implements OnInit {
   @ViewChild(MatMenuTrigger) trigger!: MatMenuTrigger;
 
   constructor(
-    private authService: TweetAppAuthService,
+    private authService: AuthService,
     private popup: PopupService,
     private router: Router
   ) { }
@@ -40,10 +39,7 @@ export class DrawerComponent implements OnInit {
   }
 
   showTweetDialog() {
-    this.popup.showDialog<TweetOperationsDialogComponent, TweetOperationsData>(
-      TweetOperationsDialogComponent,
-      { operationType: TweetOperations.tweet }
-    );
+
   }
 
   openUserMenu() {

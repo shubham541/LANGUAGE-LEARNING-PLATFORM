@@ -1,5 +1,5 @@
 <div class="login-image">
-    <img src="../../assets/login-bg.jpg" alt="Login BG" class="login-bg">
+    <img src="../../../assets/login-bg.jpg" alt="Login BG" class="login-bg">
 </div>
 
 <div fxLayoutAlign="center center" fxFlexFill>
@@ -8,7 +8,7 @@
             <div fxLayout="row" fxLayoutAlign="space-between" fxFlexFill>
                 <h2>Login</h2>
                 <div>
-                    <img src="../../assets/bird-logo-blue.png" alt="logo" height="28" width="28">
+                    <img src="../../../assets/icon-192.png" alt="logo" height="28" width="28">
                 </div>
             </div>
             <mat-card-header color="primary">
@@ -16,7 +16,7 @@
             <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChanged($event)">
                 <mat-tab>
                     <ng-template mat-tab-label>
-                        <mat-icon class="person-tab-icon">person_outline</mat-icon>
+                        <mat-icon class="person-tab-icon">person</mat-icon>
                         username
                     </ng-template>
                     <form id="username-tab-form" [formGroup]="unFormGroup" (ngSubmit)="loginUser(0)">

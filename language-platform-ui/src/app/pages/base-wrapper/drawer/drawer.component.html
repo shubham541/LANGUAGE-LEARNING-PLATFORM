@@ -39,8 +39,8 @@
 
             <button (click)="openUserMenu()" class="sidebar-link" style="margin-top: 50px;" mat-button>
                 <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px" fxFlexFill>
-                    <app-user-avatar [size]="44" [username]="username"></app-user-avatar>
-                    <div class="grey username">@{{username}}</div>
+                    <!-- <app-user-avatar [size]="44" [username]="username"></app-user-avatar> -->
+                    <div class="grey username">{{username}}</div>
                     <mat-icon [matMenuTriggerFor]="menu" class="grey">more_vert</mat-icon>
                 </div>
             </button>
@@ -67,6 +67,6 @@
     </button>
     <button (click)="logout()" mat-menu-item>
         <mat-icon>logout</mat-icon>
-        <span>Logout @{{username}}</span>
+        <span>Logout {{username}}</span>
     </button>
 </mat-menu>

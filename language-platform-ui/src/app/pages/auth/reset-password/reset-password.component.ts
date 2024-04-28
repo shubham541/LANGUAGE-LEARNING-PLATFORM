@@ -2,10 +2,10 @@ import { Location } from '@angular/common';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { ForgotPasswordRequest } from 'src/app/model/forgotPasswordRequest';
-import { TweetAppAuthService } from 'src/app/services/auth/tweet-app-auth.service';
-import { PopupService } from 'src/app/services/popup.service';
-import { CustomValidators } from 'src/app/validators/validator';
+import { ForgotPasswordRequest } from '../../../model/forgotPasswordRequest';
+import { PopupService } from '../../../services/popup.service';
+import { CustomValidators } from '../../../validators/validator';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -39,7 +39,7 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
   }
 
   constructor(
-    private authService: TweetAppAuthService,
+    private authService: AuthService,
     private popup: PopupService,
     private fb: FormBuilder,
     private validators: CustomValidators,
@@ -76,7 +76,7 @@ export class ResetPasswordComponent implements OnInit, AfterViewInit {
     this.authService.fetchSecurityQnUsingGET(this.currUser)
       .pipe(takeUntil(this.unsubs))
       .subscribe(({
-        next: (pyld) => {
+        next: (pyld: any) => {
           this.loading = false;
           if (pyld?.data) {
             this.securityQn = pyld?.data;

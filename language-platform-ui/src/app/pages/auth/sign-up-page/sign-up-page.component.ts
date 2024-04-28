@@ -3,10 +3,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { RegisterRequest } from 'src/app/model/registerRequest';
-import { TweetAppAuthService } from 'src/app/services/auth/tweet-app-auth.service';
-import { PopupService } from 'src/app/services/popup.service';
-import { CustomValidators } from 'src/app/validators/validator';
+import { RegisterRequest } from '../../../model/registerRequest';
+import { PopupService } from '../../../services/popup.service';
+import { CustomValidators } from '../../../validators/validator';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-sign-up-page',
@@ -61,7 +61,7 @@ export class SignUpPageComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private validators: CustomValidators,
     private location: Location,
-    private authService: TweetAppAuthService,
+    private authService: AuthService,
     private popup: PopupService,
     private router: Router
   ) { }

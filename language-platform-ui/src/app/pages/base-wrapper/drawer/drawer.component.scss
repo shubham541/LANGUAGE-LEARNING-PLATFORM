@@ -1,4 +1,4 @@
-@import "../../../custom-palette.scss";
+@import "../../../../custom-palette.scss";
 
 $primary: map-get($custom-palette, 500);
 $primary-dark: map-get($custom-palette, 700);
