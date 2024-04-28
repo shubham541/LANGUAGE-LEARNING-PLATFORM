@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "auth-config",
+      "type": "com.bits.language.commons.property.AuthProperties",
+      "sourceType": "com.bits.language.commons.property.AuthProperties"
+    },
+    {
+      "name": "jms-logger",
+      "type": "com.bits.language.commons.property.JMSLoggerProperty",
+      "sourceType": "com.bits.language.commons.property.JMSLoggerProperty"
+    }
+  ],
+  "properties": [
+    {
+      "name": "auth-config.skip-path",
+      "type": "java.lang.String",
+      "sourceType": "com.bits.language.commons.property.AuthProperties"
+    },
+    {
+      "name": "jms-logger.logger-queue-name",
+      "type": "java.lang.String",
+      "sourceType": "com.bits.language.commons.property.JMSLoggerProperty"
+    }
+  ],
+  "hints": []
+}

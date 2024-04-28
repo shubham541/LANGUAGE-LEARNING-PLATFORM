@@ -24,7 +24,7 @@ describe('LoginPageComponent', () => {
   const popupSpy: jasmine.SpyObj<PopupService> = jasmine.createSpyObj('PopupService', ['showErrorMessage']);
   let navigateSpy: jasmine.Spy<any>;
   let router: Router;
-  const authServiceSpy: jasmine.SpyObj<TweetAppAuthService> = jasmine.createSpyObj('TweetAppAuthService', ['loginWithUsernameUsingPOST', 'loginWithEmailUsingPOST']);
+  const authServiceSpy: jasmine.SpyObj<TweetAppAuthService> = jasmine.createSpyObj('AuthService', ['loginWithUsernameUsingPOST', 'loginWithEmailUsingPOST']);
 
   const successToken: PayloadTokenResponse = {
     data: {

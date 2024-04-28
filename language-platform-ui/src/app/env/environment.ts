@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     resourceBasePath: '',
-    authBasePath: '',
+    authBasePath: 'http://localhost:8100',
   };
   
   /*

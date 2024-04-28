@@ -1,0 +1,7 @@
+#ignore filebeat data
+filebeat/data/*
+
+# Compiled class file
+*.class
+
+.factorypath
