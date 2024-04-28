@@ -1,1 +1,248 @@
+<div id="learning-material">
+  <ng-container *ngIf="learningMaterials | async as data">
+    <!-- learning-material.component.html -->
 
+    <div class="container">
+      <!-- Language Vocabulary Section -->
+      <div class="section">
+        <h2 class="m-7">Language Vocabulary</h2>
+        <div class="vocabulary">
+          <!-- Prepositions -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Prepositions</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let preposition of data.languageVocabulary.prepositions">{{ preposition }}</li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+          <!-- Interjections -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Interjections</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let interjection of data.languageVocabulary.interjections">{{ interjection }}</li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+          <!-- Conjunctions -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Conjunctions</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let conjunction of data.languageVocabulary.conjunctions">{{ conjunction }}</li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+          <!-- Verbs -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Verbs</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Action</h4>
+                <ul>
+                  <li *ngFor="let actionVerb of data.languageVocabulary.verbs.Action">{{ actionVerb }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>State</h4>
+                <ul>
+                  <li *ngFor="let stateVerb of data.languageVocabulary.verbs.State">{{ stateVerb }}</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Numbers -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Numbers</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Cardinal</h4>
+                <ul>
+                  <li *ngFor="let cardinalNumber of data.languageVocabulary.numbers.Cardinal">{{ cardinalNumber }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Ordinal</h4>
+                <ul>
+                  <li *ngFor="let ordinalNumber of data.languageVocabulary.numbers.Ordinal">{{ ordinalNumber }}</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Nouns -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Nouns</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Person</h4>
+                <ul>
+                  <li *ngFor="let personNoun of data.languageVocabulary.nouns.Person">{{ personNoun }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Place</h4>
+                <ul>
+                  <li *ngFor="let placeNoun of data.languageVocabulary.nouns.Place">{{ placeNoun }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Thing</h4>
+                <ul>
+                  <li *ngFor="let thingNoun of data.languageVocabulary.nouns.Thing">{{ thingNoun }}</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Determiners -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Determiners</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Articles</h4>
+                <ul>
+                  <li *ngFor="let article of data.languageVocabulary.determiners.Articles">{{ article }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Possessive</h4>
+                <ul>
+                  <li *ngFor="let possessive of data.languageVocabulary.determiners.Possessive">{{ possessive }}</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Adverbs -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Adverbs</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Manner</h4>
+                <ul>
+                  <li *ngFor="let mannerAdverb of data.languageVocabulary.adverbs.Manner">{{ mannerAdverb }}</li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Degree</h4>
+                <ul>
+                  <li *ngFor="let degreeAdverb of data.languageVocabulary.adverbs.Degree">{{ degreeAdverb }}</li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Adjectives -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Adjectives</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Descriptive</h4>
+                <ul>
+                  <li
+                    *ngFor="let descriptiveAdjective of data.languageVocabulary.adjectives.Descriptive">{{ descriptiveAdjective }}
+                  </li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Qualitative</h4>
+                <ul>
+                  <li
+                    *ngFor="let qualitativeAdjective of data.languageVocabulary.adjectives.Qualitative">{{ qualitativeAdjective }}
+                  </li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!-- Pronouns -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Pronouns</mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="sub-category">
+                <h4>Personal</h4>
+                <ul>
+                  <li *ngFor="let personalPronoun of data.languageVocabulary.pronouns.Personal">{{ personalPronoun }}
+                  </li>
+                </ul>
+              </div>
+              <div class="sub-category">
+                <h4>Demonstrative</h4>
+                <ul>
+                  <li
+                    *ngFor="let demonstrativePronoun of data.languageVocabulary.pronouns.Demonstrative">{{ demonstrativePronoun }}
+                  </li>
+                </ul>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </div>
+
+      <!-- Language Grammar Section -->
+      <div class="section">
+        <h2 class="m-7">Language Grammar</h2>
+        <div class="grammar">
+          <!-- Parts of Speech -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Parts of Speech</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let object of Object.entries(data.languageGrammar.parts_of_speech)">
+                  <strong>{{ object[0] }}:</strong> {{ object[1] }}
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+          <!-- Sentence Structure -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Sentence Structure</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let object of Object.entries(data.languageGrammar.sentence_structure)">
+                  <strong>{{ object[0] }}:</strong> {{ object[1] }}
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+          <!-- Verb Tenses -->
+          <div class="m-7">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Verb Tenses</mat-panel-title>
+              </mat-expansion-panel-header>
+              <ul>
+                <li *ngFor="let object of Object.entries(data.languageGrammar.verb_tenses)">
+                  <strong>{{ object[0] }}:</strong> {{ object[1] }}
+                </li>
+              </ul>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </ng-container>
+</div>

@@ -1,9 +1,7 @@
 package com.bits.language.resource.services;
 
-import java.util.List;
-
-import com.bits.language.resource.dto.LearningMaterialDTO;
+import com.bits.language.resource.dto.LanguageLearningMaterial;
 
 public interface LearningMaterialService {
-    List<LearningMaterialDTO> getLearningMaterialsByLanguage(Long languageId);
+    LanguageLearningMaterial getLearningMaterialsByLanguage(String languageId);
 }

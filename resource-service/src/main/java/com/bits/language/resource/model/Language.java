@@ -4,10 +4,10 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
+@Document(collection = "languages")
 public class Language {
 
-    private Long code;
+    private String code;
 
     private String name;
 

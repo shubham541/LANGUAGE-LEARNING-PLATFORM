@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {map, Observable, switchMap} from "rxjs";
+import {map, Observable} from "rxjs";
 import {environment} from "../env/environment";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Configuration} from "../configuration";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {AppConstants, Language} from "../shared/constants";
+import {LearningMaterial} from "../model/learning_material";
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,7 @@ export class ResourceService {
     );
   }
 
-  getLearningMaterials(): Observable<any> {
-    return new Observable<any>(observer => {
-    });
+  getLearningMaterials(languageCd: string): Observable<LearningMaterial> {
+    return this.httpClient.get<LearningMaterial>(`${this.basePath}/learning-materials/${languageCd}`);
   }
 }
