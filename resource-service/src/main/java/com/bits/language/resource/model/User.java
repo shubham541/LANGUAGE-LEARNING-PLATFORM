@@ -1,12 +1,15 @@
 package com.bits.language.resource.model;
 
 import com.bits.language.commons.model.Gender;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Document("user")
+@Data
 public class User {
 
 	@Id
@@ -25,6 +28,10 @@ public class User {
 	private String bio;
 
 	private String contactNumber;
+
+	private List<String> correctQuestions;
+
+	private List<String> incorrectQuestions;
 
 	public String getId() {
 		return this.id;

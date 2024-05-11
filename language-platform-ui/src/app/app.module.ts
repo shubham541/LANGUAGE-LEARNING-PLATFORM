@@ -24,6 +24,8 @@ import { HomePageComponent } from './pages/home/home-page/home-page.component';
 import {MatAccordion, MatExpansionPanel, MatExpansionPanelTitle} from "@angular/material/expansion";
 import { LanguageComponent } from './pages/home/language/language.component';
 import { TranscriptsComponent } from './pages/home/transcripts/transcripts.component';
+import { QuizComponent } from './pages/home/quiz/quiz.component';
+import {CanvasJSAngularChartsModule} from "@canvasjs/angular-charts";
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -43,7 +45,8 @@ export function tokenGetter() {
     UserProfileComponent,
     HomePageComponent,
     LanguageComponent,
-    TranscriptsComponent
+    TranscriptsComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ export function tokenGetter() {
     HttpClientModule,
     AngularMaterialModule,
     InfiniteScrollModule,
+    CanvasJSAngularChartsModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

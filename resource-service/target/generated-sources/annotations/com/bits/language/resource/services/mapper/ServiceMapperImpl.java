@@ -3,9 +3,11 @@ package com.bits.language.resource.services.mapper;
 import com.bits.language.resource.dto.LanguageDTO;
 import com.bits.language.resource.dto.LanguageGrammarDTO;
 import com.bits.language.resource.dto.LanguageVocabularyDTO;
+import com.bits.language.resource.dto.QuestionsDTO;
 import com.bits.language.resource.model.Language;
 import com.bits.language.resource.model.LanguageGrammar;
 import com.bits.language.resource.model.LanguageVocabulary;
+import com.bits.language.resource.model.Questions;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -15,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-04-28T20:21:01+0530",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.9 (JetBrains s.r.o.)"
+    date = "2024-05-11T20:04:33+0530",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.11 (Amazon.com Inc.)"
 )
 @Component
 public class ServiceMapperImpl implements ServiceMapper {
@@ -113,5 +115,25 @@ public class ServiceMapperImpl implements ServiceMapper {
         }
 
         return languageVocabularyDTO;
+    }
+
+    @Override
+    public QuestionsDTO mapToDTO(Questions questions) {
+        if ( questions == null ) {
+            return null;
+        }
+
+        QuestionsDTO questionsDTO = new QuestionsDTO();
+
+        questionsDTO.setId( questions.getId() );
+        questionsDTO.setLanguage( questions.getLanguage() );
+        questionsDTO.setQuestion( questions.getQuestion() );
+        questionsDTO.setCorrectAnswer( questions.getCorrectAnswer() );
+        List<String> list = questions.getOptions();
+        if ( list != null ) {
+            questionsDTO.setOptions( new ArrayList<String>( list ) );
+        }
+
+        return questionsDTO;
     }
 }

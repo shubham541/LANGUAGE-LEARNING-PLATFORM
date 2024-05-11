@@ -1,4 +1,18 @@
 <div id="learning-material">
+  <ng-container *ngIf="languageCd | async as data">
+    <mat-card class="quiz-card">
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <div>
+            <mat-card-title>Attempt Quiz</mat-card-title>
+            <mat-card-subtitle>Test your knowledge</mat-card-subtitle>
+          </div>
+          <button mat-raised-button color="primary" [routerLink]="['/quiz', data]">Start Quiz</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
   <ng-container *ngIf="learningMaterials | async as data">
     <!-- learning-material.component.html -->
 

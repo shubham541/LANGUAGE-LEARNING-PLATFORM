@@ -9,6 +9,7 @@ import { AuthGuardService } from './shared/auth-guard.service';
 import { UserProfileComponent } from './pages/home/user-profile/user-profile.component';
 import {HomePageComponent} from "./pages/home/home-page/home-page.component";
 import {LanguageComponent} from "./pages/home/language/language.component";
+import {QuizComponent} from "./pages/home/quiz/quiz.component";
 
 export const routes: Routes = [
   {
@@ -43,6 +44,11 @@ export const routes: Routes = [
         {
           path: 'languages/:code',
           component: LanguageComponent,
+          pathMatch: 'full'
+        },
+        {
+          path: 'quiz/:code',
+          component: QuizComponent,
           pathMatch: 'full'
         },
         {

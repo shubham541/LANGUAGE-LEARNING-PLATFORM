@@ -374,3 +374,188 @@ db.language_grammar_expalinations.insertMany([
 }
 ]
 );
+
+db.language_quiz_questions.insertMany(
+[
+  {
+    "language": "fr",
+    "question": "What is the French translation of 'apple'?",
+    "correctAnswer": "pomme",
+    "options": ["pomme", "pamplemousse", "poire"]
+  },
+  {
+    "language": "fr",
+    "question": "Translate 'banana' into French.",
+    "correctAnswer": "banane",
+    "options": ["banane", "abricot", "fraise"]
+  },
+  {
+    "language": "fr",
+    "question": "How do you say 'cat' in French?",
+    "correctAnswer": "chat",
+    "options": ["chien", "chat", "cheval"]
+  },
+  {
+    "language": "fr",
+    "question": "What is the French word for 'dog'?",
+    "correctAnswer": "chien",
+    "options": ["chien", "poisson", "souris"]
+  },
+  {
+    "language": "fr",
+    "question": "Provide the French translation for 'house'.",
+    "correctAnswer": "maison",
+    "options": ["maison", "voiture", "arbre"]
+  },
+  {
+    "language": "fr",
+    "question": "What does 'bonjour' mean in French?",
+    "correctAnswer": "hello",
+    "options": ["bonjour", "au revoir", "merci"]
+  },
+  {
+    "language": "fr",
+    "question": "Translate 'school' to French.",
+    "correctAnswer": "école",
+    "options": ["école", "hôpital", "parc"]
+  },
+  {
+    "language": "fr",
+    "question": "How do you say 'book' in French?",
+    "correctAnswer": "livre",
+    "options": ["livre", "stylo", "ordinateur"]
+  },
+  {
+    "language": "fr",
+    "question": "What is the French translation of 'car'?",
+    "correctAnswer": "voiture",
+    "options": ["voiture", "vélo", "train"]
+  },
+  {
+    "language": "fr",
+    "question": "Give the French equivalent of 'computer'.",
+    "correctAnswer": "ordinateur",
+    "options": ["ordinateur", "téléphone", "télévision"]
+  },
+  {
+    "language": "es",
+    "question": "What is the Spanish translation of 'apple'?",
+    "correctAnswer": "manzana",
+    "options": ["manzana", "pera", "uva"]
+  },
+  {
+    "language": "es",
+    "question": "Translate 'banana' into Spanish.",
+    "correctAnswer": "plátano",
+    "options": ["plátano", "naranja", "limón"]
+  },
+  {
+    "language": "es",
+    "question": "How do you say 'cat' in Spanish?",
+    "correctAnswer": "gato",
+    "options": ["perro", "gato", "ratón"]
+  },
+  {
+    "language": "es",
+    "question": "What is the Spanish word for 'dog'?",
+    "correctAnswer": "perro",
+    "options": ["gato", "perro", "pájaro"]
+  },
+  {
+    "language": "es",
+    "question": "Provide the Spanish translation for 'house'.",
+    "correctAnswer": "casa",
+    "options": ["casa", "coche", "árbol"]
+  },
+  {
+    "language": "es",
+    "question": "What does 'hola' mean in Spanish?",
+    "correctAnswer": "hello",
+    "options": ["hola", "adiós", "gracias"]
+  },
+  {
+    "language": "es",
+    "question": "Translate 'school' to Spanish.",
+    "correctAnswer": "escuela",
+    "options": ["escuela", "hospital", "parque"]
+  },
+  {
+    "language": "es",
+    "question": "How do you say 'book' in Spanish?",
+    "correctAnswer": "libro",
+    "options": ["libro", "pluma", "ordenador"]
+  },
+  {
+    "language": "es",
+    "question": "What is the Spanish translation of 'car'?",
+    "correctAnswer": "coche",
+    "options": ["coche", "bicicleta", "tren"]
+  },
+  {
+    "language": "es",
+    "question": "Give the Spanish equivalent of 'computer'.",
+    "correctAnswer": "computadora",
+    "options": ["computadora", "teléfono", "televisión"]
+  },
+  {
+    "language": "zh",
+    "question": "What is the Chinese translation of 'apple'?",
+    "correctAnswer": "苹果",
+    "options": ["苹果", "梨", "葡萄"]
+  },
+  {
+    "language": "zh",
+    "question": "Translate 'banana' into Chinese.",
+    "correctAnswer": "香蕉",
+    "options": ["香蕉", "橙子", "柠檬"]
+  },
+  {
+    "language": "zh",
+    "question": "How do you say 'cat' in Chinese?",
+    "correctAnswer": "猫",
+    "options": ["狗", "猫", "老鼠"]
+  },
+  {
+    "language": "zh",
+    "question": "What is the Chinese word for 'dog'?",
+    "correctAnswer": "狗",
+    "options": ["猫", "狗", "鸟"]
+  },
+  {
+    "language": "zh",
+    "question": "Provide the Chinese translation for 'house'.",
+    "correctAnswer": "房子",
+    "options": ["房子", "车", "树"]
+  },
+  {
+    "language": "zh",
+    "question": "What does '你好' mean in Chinese?",
+    "correctAnswer": "hello",
+    "options": ["你好", "再见", "谢谢"]
+  },
+  {
+    "language": "zh",
+    "question": "Translate 'school' to Chinese.",
+    "correctAnswer": "学校",
+    "options": ["学校", "医院", "公园"]
+  },
+  {
+    "language": "zh",
+    "question": "How do you say 'book' in Chinese?",
+    "correctAnswer": "书",
+    "options": ["书", "笔", "电脑"]
+  },
+  {
+    "language": "zh",
+    "question": "What is the Chinese translation of 'car'?",
+    "correctAnswer": "汽车",
+    "options": ["汽车", "自行车", "火车"]
+  },
+  {
+    "language": "zh",
+    "question": "Give the Chinese equivalent of 'computer'.",
+    "correctAnswer": "电脑",
+    "options": ["电脑", "电话", "电视"]
+  }
+]
+)

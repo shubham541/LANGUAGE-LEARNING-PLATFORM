@@ -1,28 +1,33 @@
 package com.bits.language.resource.controllers;
 
-import com.bits.language.resource.dto.ChallengeDTO;
-import com.bits.language.resource.dto.ParticipationDTO;
+import com.bits.language.resource.dto.QuestionsDTO;
 import com.bits.language.resource.services.LanguageChallengeService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+
+@RequiredArgsConstructor
+@RestController
 @RequestMapping("/language-challenges")
 public class LanguageChallengeController {
 
-    @Autowired
-    private LanguageChallengeService languageChallengeService;
+    private final LanguageChallengeService languageChallengeService;
 
-    @PostMapping("/create")
-    public String createChallenge(@RequestBody ChallengeDTO challengeDTO) {
-		return null;
-        // Call LanguageChallengeService to create a new challenge
+    @GetMapping("/quiz/{language}")
+    public List<QuestionsDTO> findByLanguage(@PathVariable String language) {
+        return languageChallengeService.findByLanguage(language);
     }
 
-    @PostMapping("/participate")
-    public String participateInChallenge(@RequestBody ParticipationDTO participationDTO) {
-		return null;
-        // Call LanguageChallengeService to participate in a challenge
+    @PutMapping("/quiz/{id}")
+    public void submitQuiz(@PathVariable String id, @RequestParam boolean result) {
+        languageChallengeService.submitQuiz(id, result);
     }
+
+    @GetMapping("/quiz/users/{username}")
+    public List<QuestionsDTO> findAll(@PathVariable String username) {
+        return languageChallengeService.findByUsername(username);
+    }
+
 }

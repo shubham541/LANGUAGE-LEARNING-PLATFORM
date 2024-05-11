@@ -1,4 +1,4 @@
-import { Location } from '@angular/common';
+import {formatDate, Location} from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -45,7 +45,7 @@ export class SignUpPageComponent implements OnInit, OnDestroy {
     return {
       bio: this.stepThreeFG.get('bio')?.value,
       contactNumber: this.stepOneFG.get('phoneNumber')?.value,
-      dob: this.stepThreeFG.get('dob')?.value,
+      dob: formatDate(this.stepThreeFG.get('dob')?.value, 'dd-MM-yyyy', 'en-US'),
       email: this.stepOneFG.get('email')?.value,
       firstName: this.stepTwoFG.get('firstName')?.value,
       lastName: this.stepTwoFG.get('lastName')?.value,

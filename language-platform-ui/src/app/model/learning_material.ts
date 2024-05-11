@@ -82,3 +82,12 @@ export interface SentenceStructure {
   Clause: string
 }
 
+export interface Question {
+  id: string,
+  question: string,
+  options: string[],
+  language: string,
+  correctAnswer: string,
+  isCorrect: boolean
+}
+

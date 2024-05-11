@@ -13,12 +13,16 @@ export class LanguageComponent implements OnInit {
 
   learningMaterials!: Observable<LearningMaterial>;
 
+  languageCd!: Observable<string>;
+
   constructor(private service: ResourceService, private router: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.learningMaterials = this.router.paramMap.pipe(
-      map(params => params.get('code')!),
+    this.languageCd = this.router.paramMap.pipe(
+      map(params => params.get('code')!)
+    );
+    this.learningMaterials = this.languageCd.pipe(
       switchMap(languageCd => this.service.getLearningMaterials(languageCd))
     );
   }
