@@ -26,7 +26,7 @@ public class LanguageChallengeController {
     }
 
     @GetMapping("/quiz/users/{username}")
-    public List<QuestionsDTO> findAll(@PathVariable String username) {
+    public List<QuestionsDTO> findQuizResultsByUser(@PathVariable String username) {
         return languageChallengeService.findByUsername(username);
     }
 

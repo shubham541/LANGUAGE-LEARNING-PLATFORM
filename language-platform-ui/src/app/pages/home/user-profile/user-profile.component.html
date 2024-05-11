@@ -1,8 +1,29 @@
-<ng-container *ngIf="chartOptions | async as dataList">
-
-  <ng-container *ngFor="let data of Object.entries(dataList)">
-    <div class="chart-title">{{data[0]}}</div>
-    <canvasjs-chart [options]="data[1]" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
-  </ng-container>
+<ng-container *ngIf="groupedData">
+  <div class="font-semibold m-7">Review previously answered questions</div>
+  <div class="m-12" *ngFor="let data of groupedData">
+    <mat-expansion-panel expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ data.language | language }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="count_of_right_vs_wrong_and_percentage m-4">
+        <div class="font-semibold">Correct: {{ data.correct }}</div>
+        <div class="font-semibold">Wrong: {{ data.wrong }}</div>
+        <div class="font-semibold">Score: {{ data.points }} Pts</div>
+      </div>
+      <ul>
+        <li class="mb-4" *ngFor="let question of data.questions">
+          <mat-expansion-panel [expanded]="!question.correct"
+                               [ngStyle]="{'background-color': question.correct ? '#90EE90' : '#FFD580'}">
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{ question.question }}</mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+              <div>Correct Answer <span class="font-bold">{{ question.correctAnswer }}</span></div>
+            </div>
+          </mat-expansion-panel>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </div>
 
 </ng-container>

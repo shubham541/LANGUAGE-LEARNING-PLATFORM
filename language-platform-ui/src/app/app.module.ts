@@ -26,6 +26,7 @@ import { LanguageComponent } from './pages/home/language/language.component';
 import { TranscriptsComponent } from './pages/home/transcripts/transcripts.component';
 import { QuizComponent } from './pages/home/quiz/quiz.component';
 import {CanvasJSAngularChartsModule} from "@canvasjs/angular-charts";
+import { LanguagePipe } from './language.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -46,7 +47,8 @@ export function tokenGetter() {
     HomePageComponent,
     LanguageComponent,
     TranscriptsComponent,
-    QuizComponent
+    QuizComponent,
+    LanguagePipe
   ],
   imports: [
     BrowserModule,

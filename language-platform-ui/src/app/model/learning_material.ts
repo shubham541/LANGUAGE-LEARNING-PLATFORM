@@ -88,6 +88,6 @@ export interface Question {
   options: string[],
   language: string,
   correctAnswer: string,
-  isCorrect: boolean
+  correct: boolean
 }
 
