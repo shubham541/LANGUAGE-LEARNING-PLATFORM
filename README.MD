@@ -4,4 +4,4 @@
 - Run `docker-compose up` to start the app
 
 
-prerequisite: Maven, java 17, docker, Angular, NPM
+Prerequisite: Maven, java 17, docker, Angular, NPM
