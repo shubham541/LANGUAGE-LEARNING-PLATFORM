@@ -5,3 +5,5 @@
 
 
 Prerequisite: Maven, java 17, docker, Angular, NPM
+
+Visit http://localhost:4200 to lauunch the app
