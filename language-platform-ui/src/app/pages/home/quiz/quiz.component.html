@@ -1,0 +1,30 @@
+<ng-container *ngIf="questions | async as data">
+  <form [formGroup]="formGroup">
+    <!-- show one question at a time and show option to move to the next question regardless of the result -->
+    <mat-card class="quiz-card mb-32 mt-32 ml-12 mr-12">
+      <div class="pb-32 pt-32 pl-12 pr-24">
+        <mat-card-content>
+          <mat-card-title class="card-title">
+            <h2 class="font-bold">Quiz</h2>
+          </mat-card-title>
+          <div class="quiz-content m-4">
+            <div class="question">
+              <h3>{{ data[currentQuestion].question }}</h3>
+            </div>
+            <div class="options">
+              <mat-radio-group formControlName="answer">
+                <mat-radio-button class="m-4" style="display: block" *ngFor="let option of data[currentQuestion].options"
+                                  [value]="option">
+                  {{ option }}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="actions mt-14">
+              <button mat-raised-button color="primary" (click)="onCheck(data[currentQuestion])">Check</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </form>
+</ng-container>

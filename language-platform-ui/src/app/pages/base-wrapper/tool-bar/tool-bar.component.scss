@@ -1,0 +1,20 @@
+.toolbar{
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    height: 53px;
+}
+
+$iconSize: 28px;
+
+.back-icon {
+    font-size: $iconSize;
+    height: $iconSize;
+    width: $iconSize;
+    padding-right: 5px;
+}
+
+.toolbar-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}

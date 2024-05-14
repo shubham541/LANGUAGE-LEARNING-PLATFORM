@@ -1,0 +1,32 @@
+version: "3.5"
+
+services:
+
+  auth-service:
+    image: language-learning/auth-service:latest
+    ports:
+      - "8100:8100"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - DB_BASE=resource-service:8102
+      - AUTH_BASE=auth-service:8100
+    depends_on:
+      - resource-service
+
+  resource-service:
+    image: language-learning/resource-service:latest
+    ports:
+      - "8102:8102"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - DB_BASE=resource-service:8102
+      - AUTH_BASE=auth-service:8100
+
+  learning-platform-ui:
+    image: language-learning/app-ui:latest
+    ports:
+      - "4200:4200"
+    depends_on:
+      - auth-service
+      - resource-service
+
